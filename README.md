@@ -1,7 +1,7 @@
 # compactador_de_arquivos
-## __Projeto PEE - Script criado para o linux com o Python 2.7. Responsável por gerar os dados para a comparação dos compactadores.__
+### __Projeto PEE - Script criado para o linux com o Python 2.7. Responsável por gerar os dados para a comparação dos compactadores.__
 
-## __Sobre o projeto:__
+### __Sobre o projeto:__
 
 -Não precisamos criar o script para windows.
 
@@ -17,7 +17,7 @@
 
  8mb, 16mb, 32mb, 64mb, 128mb, 256mb, 512mb, 1024mb.
  
-## __Os dados gerados pelo script são:__
+### __Os dados gerados pelo script são:__
 
 -User-time
 
