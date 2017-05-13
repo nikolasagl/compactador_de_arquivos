@@ -28,8 +28,9 @@ def csv_creator(codigo1, codigo2, nome_arq, arquivo):
     #lista aux q recebe apenas a primeira linha de stderr(que é o q interessa, linha q contem, user, sys, elapsed, cpu)
     listaux = [erro[0]]
 
-    #for que separa a linha 1 de stderr por palavras, atraves dos espaços(toda vez q encontra um espaço ' ' ele define uma palavra
-    #e joga para dentro da lista output, que passa a ser uma lista de strings, onde cada string representa o valor de uma das variaveis de estudo
+    #for que separa a linha 1 de stderr por palavras, atraves dos espaços(toda vez q encontra um espaço ' ' ele define uma palavra nova)
+    #e joga para dentro da lista output, que passa a ser uma lista de strings,
+    #onde cada string representa o valor de uma das variaveis de estudo
     for item in listaux:
         items = item.split(' ')
         output.append(items)
