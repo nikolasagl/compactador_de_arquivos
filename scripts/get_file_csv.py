@@ -49,6 +49,7 @@ def csv_creator(codigo1, codigo2, nome_arq, arquivo):
     print elapsed
     print cpu
     print compacted_file_size
+    print ''
 
     #escreve a variavel aux em uma nova linha no um arquivo csv criado no doc 'targz.py'
     #'ab' do parametro de open refere-se a append b, b vai em todos
