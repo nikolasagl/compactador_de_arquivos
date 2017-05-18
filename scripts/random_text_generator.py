@@ -1,8 +1,10 @@
+#Script responsavel por criar os dados
+
 import collections
 import os
 
 seed = "1092384956781341341234656953214543219"
-words = open("lorem.txt", "r").read().replace("\n", '').split()
+words = open("/home/marcella/PycharmProjects/compactador_de_arquivos/data/lorem_base_text.txt", "r").read().replace("\n", '').split()
 
 def fdata():
     a = collections.deque(words)
@@ -13,8 +15,8 @@ def fdata():
         b.rotate(1)
 
 g = fdata()
-size = 16777216 #16mb
-fname = "test.out"
+size = 512000000 #512mb
+fname = "/home/marcella/PycharmProjects/compactador_de_arquivos/data/512mb_file"
 fh = open(fname, 'w')
 while os.path.getsize(fname) < size:
     fh.write(g.next())
