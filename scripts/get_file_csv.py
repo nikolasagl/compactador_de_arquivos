@@ -6,28 +6,29 @@ import re
 import csv
 
 #Definição da função que compacta o arquivo e gera csv com o time de execução da compactação
-def csv_creator(codigo1, codigo2, nome_arq, arquivo):
+def csv_creator(codigo1, codigo2, nome_arq, arquivo, compacted_file_size, index, is_rar, is_tar, is_zip):
+    if (index == 50):
+        return 1
     #comando que será escrito no terminal
     time_command = ['time', codigo1, codigo2, nome_arq, arquivo]
-    size_command = ['du', '-hsb', nome_arq]
 
     #Abre um 'terminal' e executa o comando passado por parametro
     #aqui stderr e stdout recebem um pipe vindo do subprocess popen. obs: nao sei pra que ainda
     time = subprocess.Popen(time_command, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-    size = subprocess.Popen(size_command, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
 
     #o time de execução do processo(que é o que queremos) é retornado no stderr
     #stdout retorna a execução do processo em si.(mostra o passo a passo da compactação do arquivo)
     result_time = time.stderr
-    result_size = size.stdout
 
     #readlines retorna uma lista de strings, onde cada string representa uma linha de result
     time = result_time.readlines()
-    size = result_size.readlines()
+
+    if(is_tar == True):
+        time.pop(0)
 
     #lista que recebera o stderr separado por palavras
     output = []
-
+    
     #for que separa a linha 1 de stderr por palavras, atraves dos espaços(toda vez q encontra um espaço ' ' ele define uma palavra
     #e joga para dentro da lista output, que passa a ser uma lista de strings, onde cada string representa o valor de uma das variaveis de estudo
     for item in [time[0]]:
@@ -42,7 +43,13 @@ def csv_creator(codigo1, codigo2, nome_arq, arquivo):
     system = (re.sub(r'[^\d.]+','', system))
     elapsed = (re.sub(r'[^\d.:]+','', elapsed))
     cpu = (re.sub(r'[^\d.%]+','', cpu))
-    compacted_file_size = (re.sub(r'[^\d]+', '', size[0]))
+
+    if (index == 0):
+        size_command = ['du', '-hsb', nome_arq]
+        size = subprocess.Popen(size_command, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+        result_size = size.stdout
+        size = result_size.readlines()
+        compacted_file_size = (re.sub(r'[^\d]+', '', size[0]))
 
     print user
     print system
@@ -54,8 +61,8 @@ def csv_creator(codigo1, codigo2, nome_arq, arquivo):
     #escreve a variavel aux em uma nova linha no um arquivo csv criado no doc 'targz.py'
     #'ab' do parametro de open refere-se a append b, b vai em todos
     aux = [user, system, elapsed, cpu, compacted_file_size]
-    with open('/home/marcella/PycharmProjects/compactador_de_arquivos/csv/rar/rar.csv', 'ab') as csvfile:
+    with open('/home/marcella/PycharmProjects/compactador_de_arquivos/csv/zip/zip.csv', 'ab') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(aux)
-        return 0
-    return 1
+    csvfile.close()
+    return csv_creator(codigo1, codigo2, nome_arq, arquivo, compacted_file_size, index+1, is_rar, is_tar, is_zip)

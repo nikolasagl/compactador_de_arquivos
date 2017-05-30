@@ -24,10 +24,9 @@ with open('/home/marcella/PycharmProjects/compactador_de_arquivos/csv/targz/targ
     header = ['User-Time', 'System-Time', 'Elapsed-Time', 'CPU-Usage', 'Compacted-File-Size']
     writer = csv.DictWriter(csvfile, fieldnames=header)
     writer.writeheader()
+csvfile.close()
 
 #laço que chama a função responsavel por captar os dados de cada compactação e escreve-los em uma nova linha o arquivo csv
-for i in range(50):
-    teste = get_file_csv.csv_creator(dictcodigo['codigo1'], dictcodigo['codigo2'], dictcodigo['nome_arq'], dictarquivo[1])
+teste = get_file_csv.csv_creator(dictcodigo['codigo1'], dictcodigo['codigo2'], dictcodigo['nome_arq'], dictarquivo[1], '', 0, False, True, False)
 
-csvfile.close()
 print teste
