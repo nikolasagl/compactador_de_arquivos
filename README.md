@@ -1,5 +1,6 @@
 # compactador_de_arquivos
 ### __Projeto PEE - Script criado para Linux e Python 2.7.__
+####__Programa recebe como input um determinado arquivo e retorna como output um arquivo csv contendo informações sobre a compactação do arquivo de input__
 
 ### __Sobre o codigo:__
 Instruções:
@@ -12,7 +13,7 @@ CSV:
 -Trocar o caminho especificado na função "open()" dos scripts "rar.py", "targz.py", "zip.py", para o caminho onde o arquivo csv será criado.
 -Trocar o caminho especificado na função "csv_creator()" do script "get_file_csv.py", para o caminho onde o arquivo csv será criado.
  
-### __Os dados gerados pelo script são:__
+### __O CSV gerado pelo script contem:__
 
 -User-time
 
