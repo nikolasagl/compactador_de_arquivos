@@ -1,5 +1,5 @@
 # compactador_de_arquivos
-### __Projeto PEE - Script criado para Linux e Python 2.7.__
+### __Projeto PEE - Script criado em Linux/Python 2.7.__
 ####__Programa recebe como input um determinado arquivo e retorna como output um arquivo csv contendo informações sobre a compactação do arquivo de input__
 
 ### __Sobre o codigo:__
