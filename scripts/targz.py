@@ -17,7 +17,6 @@ dictarquivo = {
 
 compacted_file_size = ''
 
-#cria um arquivo csv e define seu cabeçalho
 with open('/home/marcella/PycharmProjects/compactador_de_arquivos/csv/targz/targz.csv', 'wb') as csvfile:
     header = ['User-Time', 'System-Time', 'Elapsed-Time', 'CPU-Usage', 'Compacted-File-Size']
     writer = csv.DictWriter(csvfile, fieldnames=header)

@@ -23,6 +23,5 @@ with open('/home/marcella/PycharmProjects/compactador_de_arquivos/csv/rar/rar.cs
     writer.writeheader()
 csvfile.close()
 
-#chama a função recursiva responsavel por captar os dados de cada compactação e escreve-los em uma nova linha o arquivo csv
 for i in range(50):
     compacted_file_size = get_file_csv.csv_creator(dictcodigo['codigo1'], dictcodigo['codigo2'], dictcodigo['nome_arq'], dictarquivo[1], compacted_file_size, i, False)

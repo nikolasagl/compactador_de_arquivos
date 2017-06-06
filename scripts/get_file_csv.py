@@ -17,7 +17,7 @@ def csv_creator(codigo1, codigo2, nome_arq, arquivo, compacted_file_size, index,
     result_time = time.stderr
     time = result_time.readlines()
 
-    if(is_tar == True):
+    if is_tar:
         time.pop(0)
 
     output = []
