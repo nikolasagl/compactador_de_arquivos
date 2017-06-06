@@ -33,13 +33,6 @@ def csv_creator(codigo1, codigo2, nome_arq, arquivo, compacted_file_size, index,
     if (index == 0):
         compacted_file_size = compact_file(nome_arq)
 
-    print user
-    print system
-    print elapsed
-    print cpu
-    print compacted_file_size
-    print ''
-
     aux = [user, system, elapsed, cpu, compacted_file_size]
     with open('/home/marcella/PycharmProjects/compactador_de_arquivos/csv/targz/targz.csv', 'ab') as csvfile:
         writer = csv.writer(csvfile)
