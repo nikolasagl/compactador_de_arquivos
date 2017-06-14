@@ -15,8 +15,8 @@ def fdata():
         b.rotate(1)
 
 g = fdata()
-size = 512000000 #512mb
-fname = "/home/marcella/PycharmProjects/compactador_de_arquivos/data/512mb_file"
+size = 2048000000 #512mb
+fname = "/home/marcella/PycharmProjects/compactador_de_arquivos/data/2048mb_file"
 fh = open(fname, 'w')
 while os.path.getsize(fname) < size:
     fh.write(g.next())

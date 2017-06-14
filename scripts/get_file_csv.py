@@ -11,7 +11,7 @@ def compact_file(nome_arq):
     compacted_file_size = (re.sub(r'[^\d]+', '', size[0]))
     return compacted_file_size
 
-def csv_creator(codigo1, codigo2, nome_arq, arquivo, compacted_file_size, index, is_tar):
+def csv_creator(codigo1, codigo2, nome_arq, arquivo, compacted_file_size, index, is_tar, csv_path):
     time_command = ['time', codigo1, codigo2, nome_arq, arquivo]
     time = subprocess.Popen(time_command, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
     result_time = time.stderr
@@ -34,7 +34,7 @@ def csv_creator(codigo1, codigo2, nome_arq, arquivo, compacted_file_size, index,
         compacted_file_size = compact_file(nome_arq)
 
     aux = [user, system, elapsed, cpu, compacted_file_size]
-    with open('/home/marcella/PycharmProjects/compactador_de_arquivos/csv/targz/targz.csv', 'ab') as csvfile:
+    with open(csv_path, 'ab') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(aux)
     csvfile.close()
