@@ -4,14 +4,10 @@
 
 ### __Sobre o codigo:__
 Instruções:
-Para que o código funcione é preciso alterar em sua fonte os caminhos a serem utilizados durante sua execução.
+Execute o script a partir do terminal, como parametro digite o caminho do arquivo a ser compactado e o caminho onde o csv deve
+deve ser criado.
 
-Arquivos:
--Trocar o caminho especificado no "dictarquivo" dos scripts(rar.py, targz.py, zip.py), para o caminho onde está localizado o arquivo a ser compactado
-
-CSV:
--Trocar o caminho especificado na função "open()" dos scripts "rar.py", "targz.py", "zip.py", para o caminho onde o arquivo csv será criado.
--Trocar o caminho especificado na função "csv_creator()" do script "get_file_csv.py", para o caminho onde o arquivo csv será criado.
+Ex: python rar.py /home/usuario/data/arquivo_x /home/usuario/csv/csv_file.csv
  
 ### __O CSV gerado pelo script contem:__
 
