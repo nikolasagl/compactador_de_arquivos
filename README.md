@@ -4,8 +4,7 @@
 
 ### __Sobre o codigo:__
 Instruções:
-Execute o script a partir do terminal, como parametro digite o caminho do arquivo a ser compactado e o caminho onde o csv deve
-deve ser criado.
+Execute o script a partir do terminal, como parametro digite o caminho do arquivo a ser compactado e o caminho onde o csv deve ser criado.
 
 Ex: python rar.py /home/usuario/data/arquivo_x /home/usuario/csv/csv_file.csv
  
